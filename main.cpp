@@ -1,3 +1,4 @@
+#include "headers/primitives.hpp"
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
 #include <cstdlib>
@@ -48,16 +49,10 @@ int main()
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
 
-        // creating a rotating rgb triangle
-        glRotatef((float)glfwGetTime() * 50.f, 0.f, 0.f, 1.f);
-        glBegin(GL_TRIANGLES);
-            glColor3f(1.f, 0.f, 0.f);
-            glVertex3f(-0.6f, -0.4f, 0.f);
-            glColor3f(0.f, 1.f, 0.f);
-            glVertex3f(0.6f, -0.4f, 0.f);
-            glColor3f(0.f, 0.f, 1.f);
-            glVertex3f(0.f, 0.6f, 0.f);
-        glEnd();
+        // creating a point
+        struct Point point = {0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f};
+
+        DrawPoint(point, 5.0f);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
