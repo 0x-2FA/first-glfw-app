@@ -1,9 +1,5 @@
 #pragma once
 #include <GL/gl.h>
-#include <GLFW/glfw3.h>
-#include <cstdlib>
-#include <stdlib.h>
-#include <stdio.h>
 
 struct Point
 {
@@ -12,10 +8,9 @@ struct Point
     GLfloat z;
 
     // vars used in coloring
-    GLfloat r;
-    GLfloat g;
-    GLfloat b;
-    GLfloat a;
+    GLfloat r, g, b, a;
 };
 
 void DrawPoint(Point point, GLfloat size);
+
+void DrawLine(Point a, Point b, GLfloat width);

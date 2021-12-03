@@ -1,3 +1,8 @@
+/****************************************
+*  Contributors: 0x-2FA                       
+*  License: MIT                                
+*****************************************/
+
 #include "headers/primitives.hpp"
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
@@ -18,7 +23,7 @@ int main()
     // declare basic properties of the application
     int width = 1024;
     int height = 768;
-    const char *title = "First GLFW App";
+    const char *title = "First GLFW Project";
 
     window = glfwCreateWindow(width, height, title, nullptr, nullptr);
 
@@ -29,6 +34,12 @@ int main()
     }
 
     glfwMakeContextCurrent(window);
+
+    glEnable(GL_POINT_SMOOTH);
+    glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 
     // main app loop
     while (!glfwWindowShouldClose(window)) 
@@ -50,9 +61,13 @@ int main()
         glLoadIdentity();
 
         // creating a point
-        struct Point point = {0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f};
+        struct Point point_a = {0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f};
+        struct Point point_b = {1.0f, 0.8f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f};
 
-        DrawPoint(point, 5.0f);
+        DrawPoint(point_a, 15.0f);
+        DrawPoint(point_b, 15.0f);
+
+        DrawLine(point_a, point_b, 5.0f);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
