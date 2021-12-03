@@ -14,3 +14,4 @@ struct Point
 void DrawPoint(Point point, GLfloat size);
 
 void DrawLine(Point a, Point b, GLfloat width);
+

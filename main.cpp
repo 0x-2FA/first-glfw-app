@@ -3,6 +3,7 @@
 *  License: MIT                                
 *****************************************/
 
+#include "headers/grid.hpp"
 #include "headers/primitives.hpp"
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
@@ -68,6 +69,8 @@ int main()
         DrawPoint(point_b, 15.0f);
 
         DrawLine(point_a, point_b, 5.0f);
+
+        DrawGrid(5.0f, 5.0f, 0.1f);
 
         glfwSwapBuffers(window);
         glfwPollEvents();

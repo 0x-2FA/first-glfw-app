@@ -25,7 +25,9 @@ void DrawLine(Point a, Point b, GLfloat width)
     glBegin(GL_LINES);
         glColor4f(a.r, a.g, a.b, a.a);
         glVertex3f(a.x, a.y, a.z);
+        
         glColor4f(b.r, b.g, b.b, b.a);
         glVertex3f(b.x, b.y, b.z);
     glEnd();
 }
+
