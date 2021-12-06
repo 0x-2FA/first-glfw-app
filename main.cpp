@@ -72,6 +72,14 @@ int main()
 
         DrawGrid(5.0f, 5.0f, 0.1f);
 
+
+        struct Point rec_a = {0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f};
+        struct Point rec_b = {0.0f, 0.8f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f};
+        struct Point rec_c = {1.0f, 0.8f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f};
+        struct Point rec_d = {1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f};
+
+        DrawRectangle(rec_a, rec_b, rec_c, rec_d);
+
         glfwSwapBuffers(window);
         glfwPollEvents();
 

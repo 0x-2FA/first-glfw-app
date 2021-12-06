@@ -6,6 +6,7 @@
 
 #include "headers/primitives.hpp"
 #include <GL/gl.h>
+#include <GL/glext.h>
 
 
 void DrawPoint(Point point, GLfloat size)
@@ -31,3 +32,19 @@ void DrawLine(Point a, Point b, GLfloat width)
     glEnd();
 }
 
+void DrawRectangle(struct Point a, struct Point b, struct Point c, struct Point d)
+{
+    glBegin(GL_LINE_LOOP);
+        glColor4f(a.r, a.g, a.b, a.a);
+        glVertex3f(a.x, a.y, a.z);
+
+        glColor4f(b.r, b.g, b.b, b.a);
+        glVertex3f(b.x, b.y, b.z);
+
+        glColor4f(c.r, c.g, c.b, c.a);
+        glVertex3f(c.x, c.y, c.z);
+
+        glColor4f(d.r, d.g, d.b, d.a);
+        glVertex3f(d.x, d.y, d.z);
+    glEnd();
+}

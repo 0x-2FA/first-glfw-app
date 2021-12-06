@@ -11,7 +11,8 @@ struct Point
     GLfloat r, g, b, a;
 };
 
-void DrawPoint(Point point, GLfloat size);
+void DrawPoint(struct Point point, GLfloat size);
 
-void DrawLine(Point a, Point b, GLfloat width);
+void DrawLine(struct Point a, struct Point b, GLfloat width);
 
+void DrawRectangle(struct Point a, struct Point b, struct Point c, struct Point d);
